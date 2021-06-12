@@ -1,0 +1,12 @@
+---
+
+- name: Install nvim plugins
+  command: nvim -c ':PlugInstall | quit | quit'
+  changed_when: no
+  become: yes
+  become_user: alex
+
+- name: Install YouCompleteMe
+  command: /home/alex/.local/share/nvim/plugged/youcompleteme/install.py --all
+  become: yes
+  become_user: alex
